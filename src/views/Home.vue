@@ -1,412 +1,412 @@
 <template>
   <div class="home">
-    <h2 style="font-size: 39px; text-align:center; letter-spacing: 2px; padding: 2px 0 0 10px; margin-bottom: 10px;">Perfil del Representante </h2>
+    <h2 style="text-shadow: 3px 4px 5px rgb(3 28 54 / 29%); font-size: 39px; text-align:center; letter-spacing: 2px; padding: 2px 0 0 10px; margin-bottom: 10px;">Perfil del Representante </h2>
 
-    <div class="row">
+    <div class="row" style="padding-top:15px;">
       <h3>Personal</h3>
-      <label for="name">Nombres </label>
-      <input type="text" @keyup="isValid($event)" v-show="hide" v-model.trim="item.name" placeholder="Nombres">
+      <label for="name">* Nombres </label>
+      <input type="text" @keyup="isValid($event)" v-model.trim="item.name" placeholder="Nombres">
     </div>
 
     <div class="row">
-      <label for="lastname">Apellidos </label>
+      <label for="lastname">* Apellidos </label>
       <input type="text" @keyup="isValid($event)" v-model.trim="item.lastname" placeholder="Apellidos">
     </div>
 
-    <div class="row">
-      <label for="email">Correo electrónico </label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.email" placeholder="Correo Electrónico">
-    </div>
+      <div class="row">
+        <label for="email">* Correo electrónico </label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.email" placeholder="Correo Electrónico">
+      </div>
 
-    <div class="row">
-      <label for="gender">Sexo </label>
-      <select v-model="item.gender">
-        <option value="Mujer">Mujer</option>
-        <option value="Hombre">Hombre</option>
-        <option value="No binario">No binario</option>
-        <option value="Prefiero no decirlo">Prefiero no decirlo</option>
-      </select>
-    </div>
+      <div class="row">
+        <label for="gender">* Sexo </label>
+        <select v-model="item.gender">
+          <option value="Mujer">Mujer</option>
+          <option value="Hombre">Hombre</option>
+          <option value="No binario">No binario</option>
+          <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+        </select>
+      </div>
 
-    <div class="row">
-      <label for="age">Edad </label>
-      <input type="Number" @keyup="isValid($event)" v-model="item.age" placeholder="Edad">
-    </div>
+      <div class="row">
+        <label for="age">* Edad </label>
+        <input type="Number" @keyup="isValid($event)" v-model="item.age" placeholder="Edad">
+      </div>
 
-    <div class="row">
-      <label for="website">Página Web </label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.website" placeholder="Página Web">
-    </div>
+      <div class="row">
+        <label for="website">Página Web (opcional) </label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.website" placeholder="Página Web">
+      </div>
 
-    <div class="row">
-      <label for="phone">Teléfono </label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.phone" placeholder="Teléfono">
-    </div>
+      <div class="row">
+        <label for="phone">* Teléfono </label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.phone" placeholder="Teléfono">
+      </div>
 
-    <div class="row">
-      <label for="photo">Foto URL </label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.photo" placeholder="Foto URL">
-    </div>
+      <div class="row">
+        <label for="photo">* Foto URL </label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.photo" placeholder="Foto URL">
+      </div>
 
-    <div class="row">
-      <label for="public_email">Correo público </label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.public_email" placeholder="Correo público">
-    </div>
+      <div class="row">
+        <label for="public_email">* Correo público </label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.public_email" placeholder="Correo público">
+      </div>
 
-    <div class="row">
-      <label for="facebook">Facebook </label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.facebook" placeholder="Facebook">
-    </div>
+      <div class="row">
+        <label for="facebook">Facebook (opcional) </label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.facebook" placeholder="Facebook">
+      </div>
 
-    <div class="row">
-      <label for="twitter">Twitter </label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.twitter" placeholder="Twitter">
-    </div>
+      <div class="row">
+        <label for="twitter">Twitter (opcional) </label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.twitter" placeholder="Twitter">
+      </div>
 
-    <div class="row">
-      <label for="instagram">Instagram </label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.instagram" placeholder="Instagram">
-    </div>
-
-
-
-
-    <div class="row">
-      <h3>Candidatura</h3>
-      <label for="party">Partido al que pertenece </label>
-      <select v-model="item.party">
-        <option value="Redes Sociales Progresistas">Redes Sociales Progresistas</option>
-        <option value="Partido Encuentro Solidario">Partido Encuentro Solidario</option>
-        <option value="Fuerza Social por México">Fuerza Social por México</option>
-        <option value="Partido Acción Nacional">Partido Acción Nacional</option>
-        <option value="Partido Revolucionario Institucional">Partido Revolucionario Institucional</option>
-        <option value="Partido de la Revolución Democrática">Partido de la Revolución Democrática</option>
-        <option value="Partido del Trabajo">Partido del Trabajo</option>
-        <option value="Partido Verde Ecologista de México">Partido Verde Ecologista de México</option>
-        <option value="Movimiento Ciudadano">Movimiento Ciudadano</option>
-        <option value="Movimiento Regeneración Nacional">Movimiento Regeneración Nacional</option>
-        <option value="Independiente">Independiente</option>
-        <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.politic_state" placeholder="Estado">
-    </div>
-
-    <div class="row">
-      <label for="politic_state">¿En cuál estado de la república compite para ocupar un cargo de representación popular?</label>
-      <select v-model="item.politic_state">
-        <option value="Baja California Sur">Baja California Sur</option>
-        <option value="Campeche">Campeche</option>
-        <option value="Chiapas">Chiapas</option>
-        <option value="Chihuahua">Chihuahua</option>
-        <option value="Ciudad de México">Ciudad de México</option>
-        <option value="Coahuila">Coahuila</option>
-        <option value="Colima">Colima</option>
-        <option value="Durango">Durango</option>
-        <option value="Estado de México">Estado de México</option>
-        <option value="Guanajuato">Guanajuato</option>
-        <option value="Guerrero">Guerrero</option>
-        <option value="Hidalgo">Hidalgo</option>
-        <option value="Jalisco">Jalisco</option>
-        <option value="Michoacán">Michoacán</option>
-        <option value="Morelos">Morelos</option>
-        <option value="HombNayaritre">Nayarit</option>
-        <option value="Nuevo León">Nuevo León</option>
-        <option value="Oaxaca">Oaxaca</option>
-        <option value="Puebla">Puebla</option>
-        <option value="Querétaro">Querétaro</option>
-        <option value="Quintana Roo">Quintana Roo</option>
-        <option value="San Luis Potosí">San Luis Potosí</option>
-        <option value="Sinaloa">Sinaloa</option>
-        <option value="Sonora">Sonora</option>
-        <option value="Tabasco">Tabasco</option>
-        <option value="Tamaulipas">Hombre</option>
-        <option value="Tlaxcala">Tlaxcala</option>
-        <option value="Veracruz">Veracruz</option>
-        <option value="Yucatán">Yucatán</option>
-        <option value="Zacatecas">Zacatecas</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <label for="politic_charge">¿Cuál es el cargo de representación por el que compite?</label>
-      <select v-model="item.politic_charge">
-        <option value="Diputación local representación proporcional">Diputación local representación proporcional</option>
-        <option value="Diputación federal de mayoría relativa">Diputación federal de mayoría relativa</option>
-        <option value="Diputación federal representación proporcional">Diputación federal representación proporcional</option>
-        <option value="Presidencia municipal o alcaldía">Presidencia municipal o alcaldía</option>
-        <option value="Regiduría">Regiduría</option>
-        <option value="Sindicatura">Sindicatura</option>
-        <option value="Gubernatura">Gubernatura</option>
-        <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <label for="section_local">¿Cuál es la sección electoral local donde participará?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.section_local" placeholder="">
-    </div>
-
-    <div class="row">
-      <label for="section_federal">¿Cuál es la sección electoral federal donde participará?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.section_federal" placeholder="">
-    </div>
-
-    <div class="row">
-      <label for="section_federal">¿Cuál es la localidad en la que va a participar?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.section_federal" placeholder="">
-    </div>
+      <div class="row">
+        <label for="instagram">* Instagram </label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.instagram" placeholder="Instagram">
+      </div>
 
 
 
 
+      <div class="row">
+        <h3>Candidatura</h3>
+        <label for="party">* Partido al que pertenece </label>
+        <select v-model="item.party">
+          <option value="Redes Sociales Progresistas">Redes Sociales Progresistas</option>
+          <option value="Partido Encuentro Solidario">Partido Encuentro Solidario</option>
+          <option value="Fuerza Social por México">Fuerza Social por México</option>
+          <option value="Partido Acción Nacional">Partido Acción Nacional</option>
+          <option value="Partido Revolucionario Institucional">Partido Revolucionario Institucional</option>
+          <option value="Partido de la Revolución Democrática">Partido de la Revolución Democrática</option>
+          <option value="Partido del Trabajo">Partido del Trabajo</option>
+          <option value="Partido Verde Ecologista de México">Partido Verde Ecologista de México</option>
+          <option value="Movimiento Ciudadano">Movimiento Ciudadano</option>
+          <option value="Movimiento Regeneración Nacional">Movimiento Regeneración Nacional</option>
+          <option value="Independiente">Independiente</option>
+          <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
+        </select>
+      </div>
 
-    <div class="row">
-      <h3>Formación</h3>
-      <label for="last_degree">Indique cuál es su último grado de estudios obtenido</label>
-      <select v-model="item.last_degree">
-        <option value="Secundaria">Secundaria</option>
-        <option value="Preparatoria o Bachillerato">Preparatoria o Bachillerato</option>
-        <option value="Licenciatura">Licenciatura</option>
-        <option value="Especialidad">Especialidad</option>
-        <option value="Maestría">Maestría</option>
-        <option value="Doctorado">Doctorado</option>
-        <option value="Técnico Superior">Técnico Superior</option>
-        <option value="Carrera Técnica">Carrera Técnica</option>
-        <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
-      </select>
-    </div>
+      
+      <div class="row">
+        <label for="politic_state">* ¿En cuál estado de la república compite para ocupar un cargo de representación popular?</label>
+        <select v-model="item.politic_state">
+          <option value="Baja California Sur">Baja California Sur</option>
+          <option value="Campeche">Campeche</option>
+          <option value="Chiapas">Chiapas</option>
+          <option value="Chihuahua">Chihuahua</option>
+          <option value="Ciudad de México">Ciudad de México</option>
+          <option value="Coahuila">Coahuila</option>
+          <option value="Colima">Colima</option>
+          <option value="Durango">Durango</option>
+          <option value="Estado de México">Estado de México</option>
+          <option value="Guanajuato">Guanajuato</option>
+          <option value="Guerrero">Guerrero</option>
+          <option value="Hidalgo">Hidalgo</option>
+          <option value="Jalisco">Jalisco</option>
+          <option value="Michoacán">Michoacán</option>
+          <option value="Morelos">Morelos</option>
+          <option value="HombNayaritre">Nayarit</option>
+          <option value="Nuevo León">Nuevo León</option>
+          <option value="Oaxaca">Oaxaca</option>
+          <option value="Puebla">Puebla</option>
+          <option value="Querétaro">Querétaro</option>
+          <option value="Quintana Roo">Quintana Roo</option>
+          <option value="San Luis Potosí">San Luis Potosí</option>
+          <option value="Sinaloa">Sinaloa</option>
+          <option value="Sonora">Sonora</option>
+          <option value="Tabasco">Tabasco</option>
+          <option value="Tamaulipas">Hombre</option>
+          <option value="Tlaxcala">Tlaxcala</option>
+          <option value="Veracruz">Veracruz</option>
+          <option value="Yucatán">Yucatán</option>
+          <option value="Zacatecas">Zacatecas</option>
+        </select>
+      </div>
 
-    <div class="row">
-      <label for="school">¿En cuál universidad, escuela o institución obtuvo su último grado?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.school" placeholder="">
-    </div>
+      <div class="row">
+        <label for="politic_charge">* ¿Cuál es el cargo de representación por el que compite?</label>
+        <select v-model="item.politic_charge">
+          <option value="Diputación local representación proporcional">Diputación local representación proporcional</option>
+          <option value="Diputación federal de mayoría relativa">Diputación federal de mayoría relativa</option>
+          <option value="Diputación federal representación proporcional">Diputación federal representación proporcional</option>
+          <option value="Presidencia municipal o alcaldía">Presidencia municipal o alcaldía</option>
+          <option value="Regiduría">Regiduría</option>
+          <option value="Sindicatura">Sindicatura</option>
+          <option value="Gubernatura">Gubernatura</option>
+          <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
+        </select>
+      </div>
 
-    <div class="row">
-      <label for="school_degree">¿En qué área obtuvo su último grado?</label>
-      <select v-model="item.school_degree">
-        <option value="Artes y humanidades">Artes y humanidades</option>
-        <option value="Tecnología o ingeniería">Tecnología o ingeniería</option>
-        <option value="Ciencias de la vida o medicina">Ciencias de la vida o medicina</option>
-        <option value="Ciencias naturales">Ciencias naturales</option>
-        <option value="Ciencias sociales">Ciencias sociales</option>
-        <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
-      </select>
-    </div>
+      <div class="row" v-if="item.politic_charge == 'Diputación local representación proporcional'
+                        || item.politic_charge == 'Presidencia municipal o alcaldía'
+                        || item.politic_charge == 'Regiduría'
+                        || item.politic_charge == 'Gubernatura'
+                        || item.politic_charge == 'Sindicatura'">
+        <label for="section_local">* ¿Cuál es la sección electoral local donde participará?</label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.section_local" placeholder="">
+      </div>
 
-    <div class="row">
-      <label for="on_charge">¿Ha desempeñado algún cargo de representación popular anteriormente?</label>
-      <select v-model="item.on_charge">
-        <option value="true">Sí</option>
-        <option value="false">No</option>
-      </select>
-    </div>
+      <div class="row" v-if="item.politic_charge == 'Diputación federal de mayoría relativa'
+                        || item.politic_charge == 'Diputación federal representación proporcional'">
+        <label for="section_federal">* ¿Cuál es la sección electoral federal donde participará?</label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.section_federal" placeholder="">
+      </div>
 
-    <div class="row">
-      <label for="on_charge_experience">En caso de haber respondido positivamente, describa su trayectoria política</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.on_charge_experience" placeholder="">
-    </div>
+      <div class="row">
+        <label for="locality">* ¿Cuál es la localidad en la que va a participar?</label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.locality" placeholder="">
+      </div>
 
-    <div class="row">
-      <label for="job_last_experience">¿Cuál fue su última experiencia de trabajo?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.job_last_experience" placeholder="">
-    </div>
+      <div class="row">
+        <h3>Formación</h3>
+        <label for="last_degree">* Indique cuál es su último grado de estudios obtenido</label>
+        <select v-model="item.last_degree">
+          <option value="Secundaria">Secundaria</option>
+          <option value="Preparatoria o Bachillerato">Preparatoria o Bachillerato</option>
+          <option value="Licenciatura">Licenciatura</option>
+          <option value="Especialidad">Especialidad</option>
+          <option value="Maestría">Maestría</option>
+          <option value="Doctorado">Doctorado</option>
+          <option value="Técnico Superior">Técnico Superior</option>
+          <option value="Carrera Técnica">Carrera Técnica</option>
+          <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
+        </select>
+      </div>
 
-    <div class="row">
-      <label for="job_last_last_experience">¿Cuál fue su penúltima experiencia de trabajo?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.job_last_last_experience" placeholder="">
-    </div>
+      <div class="row">
+        <label for="school">* ¿En cuál universidad, escuela o institución obtuvo su último grado?</label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.school" placeholder="">
+      </div>
 
-    <div class="row">
-      <label for="language_indi">¿Domina algún idioma o lengua de pueblos originarios o indígena?</label>
-      <select v-model="item.language_indi" @change="languageIndi($event)">
-        <option value="1">Sí</option>
-        <option value="0">No</option>
-      </select>
-    </div>
+      <div class="row">
+        <label for="school_degree">* ¿En qué área obtuvo su último grado?</label>
+        <select v-model="item.school_degree">
+          <option value="Artes y humanidades">Artes y humanidades</option>
+          <option value="Tecnología o ingeniería">Tecnología o ingeniería</option>
+          <option value="Ciencias de la vida o medicina">Ciencias de la vida o medicina</option>
+          <option value="Ciencias naturales">Ciencias naturales</option>
+          <option value="Ciencias sociales">Ciencias sociales</option>
+          <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
+        </select>
+      </div>
 
-    <div class="row" v-if="item.language_indi != '0'">
-      <label for="language_indi_ones">¿Cuáles idiomas o lenguas indígenas domina?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.language_indi_ones" placeholder="">
-    </div>
+      <div class="row">
+        <label for="on_charge">* ¿Ha desempeñado algún cargo de representación popular anteriormente?</label>
+        <select v-model="item.on_charge">
+          <option value="true">Sí</option>
+          <option value="false">No</option>
+        </select>
+      </div>
 
-    <div class="row">
-      <label for="languates_general">¿Domina algún idioma?</label>
-      <select v-model="item.languates_general" @change="languageGeneral($event)">
-        <option value="1">Sí</option>
-        <option value="0">No</option>
-      </select>
-    </div>
+      <div class="row">
+        <label for="on_charge_experience">* En caso de haber respondido positivamente, describa su trayectoria política</label>
+        <textarea name="on_charge_experience" rows="3" @keyup="isValid($event)" v-model.trim="item.on_charge_experience"></textarea>
+      </div>
 
-    <div class="row" v-if="item.languates_general != '0'">
-      <label for="languates_general_ones">¿Cuáles idiomas domina?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.languates_general_ones" placeholder="">
-    </div>
+      <div class="row">
+        <label for="job_last_experience">* ¿Cuál fue su última experiencia de trabajo?</label>
+        <textarea name="job_last_experience" rows="3" @keyup="isValid($event)" v-model.trim="item.job_last_experience"></textarea>
+      </div>
 
+      <div class="row">
+        <label for="job_last_last_experience">¿Cuál fue su penúltima experiencia de trabajo?  (opcional)</label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.job_last_last_experience" placeholder="">
+      </div>
 
+      <div class="row">
+        <label for="language_indi">* ¿Domina algún idioma o lengua de pueblos originarios o indígena?</label>
+        <select v-model="item.language_indi" @change="showLanguageIndi($event)">
+          <option value="1">Sí</option>
+          <option value="0">No</option>
+        </select>
+      </div>
 
-    
+      <div class="row" v-if="item.language_indi != '0'">
+        <label for="language_indi_ones">* ¿Cuáles idiomas o lenguas indígenas domina?</label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.language_indi_ones" placeholder="">
+      </div>
 
-    <div class="row">
-      <label for="proposal_principal">¿Cuál es su principal propuesta y cómo piensa que impactará su aplicación en la población?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.proposal_principal" placeholder="">
-    </div>
+      <div class="row">
+        <label for="languates_general">* ¿Domina algún idioma?</label>
+        <select v-model="item.languates_general" @change="showLanguageGeneral($event)">
+          <option value="1">Sí</option>
+          <option value="0">No</option>
+        </select>
+      </div>
 
-    <div class="row">
-      <label for="proposal_second">¿Cuál es su segunda propuesta y cómo piensa que impactará su aplicación en la población?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.proposal_second" placeholder="">
-    </div>
-
-    <div class="row">
-      <label for="proposal_third">¿Cuál es su tercera propuesta y cómo piensa que impactará su aplicación en la población?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.proposal_third" placeholder="">
-    </div>
-
-    <div class="row">
-      <label for="proposal_specter">En el espectro ideológico político. ¿En dónde se considera usted?</label>
-      <select v-model="item.proposal_specter">
-        <option value="Izquierda">Izquierda</option>
-        <option value="Centro">Centro</option>
-        <option value="Derecha">Derecha</option>
-      </select>
-    </div>
-
-
-
-    
-
-
-    <div class="row">
-      <h3>Ideología</h3>
-      <label for="state_health_security">¿El Estado debe asegurar el bienestar de la gente?</label>
-      <select v-model="item.state_health_security">
-        <option value="A favor">A favor</option>
-        <option value="En contra">En contra</option>
-        <option value="Me da igual">Me da igual</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <label for="state_responsible">¿El Estado debe ser el principal responsable de la creación de empleos en el país?</label>
-      <select v-model="item.state_responsible">
-        <option value="A favor">A favor</option>
-        <option value="En contra">En contra</option>
-        <option value="Me da igual">Me da igual</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <label for="state_taxes">¿El Estado debe aumentar los impuestos para mejorar los servicios de bienestar social?</label>
-      <select v-model="item.state_taxes">
-        <option value="A favor">A favor</option>
-        <option value="En contra">En contra</option>
-        <option value="Me da igual">Me da igual</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <label for="state_education">¿El Estado es el principal responsable de educar a la población?</label>
-      <select v-model="item.state_education">
-        <option value="A favor">A favor</option>
-        <option value="En contra">En contra</option>
-        <option value="Me da igual">Me da igual</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <label for="state_legalization_weed"> ¿El Estado debe de legalizar la marihuana?</label>
-      <select v-model="item.state_legalization_weed">
-        <option value="A favor">A favor</option>
-        <option value="En contra">En contra</option>
-        <option value="Me da igual">Me da igual</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <label for="state_legalization_bi">¿El Estado debe de legalizar los matrimonios igualitarios?</label>
-      <select v-model="item.state_legalization_bi">
-        <option value="A favor">A favor</option>
-        <option value="En contra">En contra</option>
-        <option value="Me da igual">Me da igual</option>
-      </select>
-    </div>
-
-    <div class="row">
-      <label for="state_legalization_abort">¿El Estado debe de legalizar la interrupción del embarazo?</label>
-      <select v-model="item.state_legalization_abort">
-        <option value="A favor">A favor</option>
-        <option value="En contra">En contra</option>
-        <option value="Me da igual">Me da igual</option>
-      </select>
-    </div>
+      <div class="row" v-if="item.languates_general != '0'">
+        <label for="languates_general_ones">* ¿Cuáles idiomas domina?</label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.languates_general_ones" placeholder="">
+      </div>
 
 
 
-    <div class="row">
-      <h3>Visión</h3>
-      <label for="mexico_problem">En su perspectiva ¿Cuál es el principal problema de México?</label>
-      <select v-model="item.mexico_problem">
-        <option value="Inflación">Inflación</option>
-        <option value="Inseguridad o Delincuencia">Inseguridad o Delincuencia</option>
-        <option value="Salud">Salud</option>
-        <option value="Educación">Educación</option>
-        <option value="Derechos de los grupos sociales minoritarios">Derechos de los grupos sociales minoritarios</option>
-        <option value="Desempleo">Desempleo</option>
-        <option value="Medio ambiente">Medio ambiente</option>
-        <option value="Corrupción">Corrupción</option>
-        <option value="Narcotrafico">Narcotrafico</option>
-        <option value="La pobreza">La pobreza</option>
-        <option value="Los feminicidios">Los feminicidios</option>
-        <option value="Inmigración">Inmigración</option>
-        <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
-      </select>
-    </div>
+      
 
-    <div class="row">
-      <label for="mexico_programs">¿Qué acciones o programas realizaría para mitigar o solucionar el problema antes mencionado?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.mexico_programs" placeholder="">
-    </div>
+      <div class="row">
+        <label for="proposal_principal">* ¿Cuál es su principal propuesta y cómo piensa que impactará su aplicación en la población?</label>
+        <textarea name="proposal_principal" rows="3" @keyup="isValid($event)" v-model.trim="item.proposal_principal"></textarea>
+      </div>
 
-    <div class="row">
-      <label for="local_problem">En su perspectiva ¿Cuál es el principal problema de México?</label>
-      <select v-model="item.local_problem">
-        <option value="Inflación">Inflación</option>
-        <option value="Inseguridad o Delincuencia">Inseguridad o Delincuencia</option>
-        <option value="Salud">Salud</option>
-        <option value="Educación">Educación</option>
-        <option value="Derechos de los grupos sociales minoritarios">Derechos de los grupos sociales minoritarios</option>
-        <option value="Desempleo">Desempleo</option>
-        <option value="Medio ambiente">Medio ambiente</option>
-        <option value="Corrupción">Corrupción</option>
-        <option value="Narcotrafico">Narcotrafico</option>
-        <option value="La pobreza">La pobreza</option>
-        <option value="Los feminicidios">Los feminicidios</option>
-        <option value="Inmigración">Inmigración</option>
-        <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
-      </select>
-    </div>
+      <div class="row">
+        <label for="proposal_second">* ¿Cuál es su segunda propuesta y cómo piensa que impactará su aplicación en la población?</label>
+        <textarea name="proposal_second" rows="3" @keyup="isValid($event)" v-model.trim="item.proposal_second"></textarea>
+      </div>
 
-    <div class="row">
-      <label for="local_programs">¿Qué acciones o programas realizaría para mitigar o solucionar el problema antes mencionado?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.local_programs" placeholder="">
-    </div>
+      <div class="row">
+        <label for="proposal_third">* ¿Cuál es su tercera propuesta y cómo piensa que impactará su aplicación en la población?</label>
+        <textarea name="proposal_third" rows="3" @keyup="isValid($event)" v-model.trim="item.proposal_third"></textarea>
+      </div>
 
-    <div class="row">
-      <label for="representant_popular">¿Cuál es la razón por la que desea ser representante popular?</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.representant_popular" placeholder="">
-    </div>
+      <div class="row">
+        <label for="proposal_specter">* En el espectro ideológico político. ¿En dónde se considera usted?</label>
+        <select v-model="item.proposal_specter">
+          <option value="Izquierda">Izquierda</option>
+          <option value="Centro">Centro</option>
+          <option value="Derecha">Derecha</option>
+        </select>
+      </div>
 
-    <div class="row">
-      <label for="representant_strengths">Indique cuales son sus tres principales fortalezas para ser representante.</label>
-      <input type="text" @keyup="isValid($event)" v-model.trim="item.representant_strengths" placeholder="">
-    </div>  
+
+
+      
+
+
+      <div class="row">
+        <h3>Ideología</h3>
+        <label for="state_health_security">* ¿El Estado debe asegurar el bienestar de la gente?</label>
+        <select v-model="item.state_health_security">
+          <option value="A favor">A favor</option>
+          <option value="En contra">En contra</option>
+          <option value="Me da igual">Me da igual</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="state_responsible">* ¿El Estado debe ser el principal responsable de la creación de empleos en el país?</label>
+        <select v-model="item.state_responsible">
+          <option value="A favor">A favor</option>
+          <option value="En contra">En contra</option>
+          <option value="Me da igual">Me da igual</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="state_taxes">* ¿El Estado debe aumentar los impuestos para mejorar los servicios de bienestar social?</label>
+        <select v-model="item.state_taxes">
+          <option value="A favor">A favor</option>
+          <option value="En contra">En contra</option>
+          <option value="Me da igual">Me da igual</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="state_education">* ¿El Estado es el principal responsable de educar a la población?</label>
+        <select v-model="item.state_education">
+          <option value="A favor">A favor</option>
+          <option value="En contra">En contra</option>
+          <option value="Me da igual">Me da igual</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="state_legalization_weed">*  ¿El Estado debe de legalizar la marihuana?</label>
+        <select v-model="item.state_legalization_weed">
+          <option value="A favor">A favor</option>
+          <option value="En contra">En contra</option>
+          <option value="Me da igual">Me da igual</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="state_legalization_bi">* ¿El Estado debe de legalizar los matrimonios igualitarios?</label>
+        <select v-model="item.state_legalization_bi">
+          <option value="A favor">A favor</option>
+          <option value="En contra">En contra</option>
+          <option value="Me da igual">Me da igual</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="state_legalization_abort">* ¿El Estado debe de legalizar la interrupción del embarazo?</label>
+        <select v-model="item.state_legalization_abort">
+          <option value="A favor">A favor</option>
+          <option value="En contra">En contra</option>
+          <option value="Me da igual">Me da igual</option>
+        </select>
+      </div>
+
+
+
+
+
+      <div class="row">
+        <h3>Visión</h3>
+        <label for="mexico_problem">* En su perspectiva ¿Cuál es el principal problema de México?</label>
+        <select v-model="item.mexico_problem">
+          <option value="Inflación">Inflación</option>
+          <option value="Inseguridad o Delincuencia">Inseguridad o Delincuencia</option>
+          <option value="Salud">Salud</option>
+          <option value="Educación">Educación</option>
+          <option value="Derechos de los grupos sociales minoritarios">Derechos de los grupos sociales minoritarios</option>
+          <option value="Desempleo">Desempleo</option>
+          <option value="Medio ambiente">Medio ambiente</option>
+          <option value="Corrupción">Corrupción</option>
+          <option value="Narcotrafico">Narcotrafico</option>
+          <option value="La pobreza">La pobreza</option>
+          <option value="Los feminicidios">Los feminicidios</option>
+          <option value="Inmigración">Inmigración</option>
+          <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="mexico_programs">* ¿Qué acciones o programas realizaría para mitigar o solucionar el problema antes mencionado?</label>
+        <textarea name="mexico_programs" rows="3" @keyup="isValid($event)" v-model.trim="item.mexico_programs"></textarea>
+      </div>
+
+      <div class="row">
+        <label for="local_problem">* En su perspectiva ¿Cuál es el principal problema de México?</label>
+        <select v-model="item.local_problem">
+          <option value="Inflación">Inflación</option>
+          <option value="Inseguridad o Delincuencia">Inseguridad o Delincuencia</option>
+          <option value="Salud">Salud</option>
+          <option value="Educación">Educación</option>
+          <option value="Derechos de los grupos sociales minoritarios">Derechos de los grupos sociales minoritarios</option>
+          <option value="Desempleo">Desempleo</option>
+          <option value="Medio ambiente">Medio ambiente</option>
+          <option value="Corrupción">Corrupción</option>
+          <option value="Narcotrafico">Narcotrafico</option>
+          <option value="La pobreza">La pobreza</option>
+          <option value="Los feminicidios">Los feminicidios</option>
+          <option value="Inmigración">Inmigración</option>
+          <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="local_programs">* ¿Qué acciones o programas realizaría para mitigar o solucionar el problema antes mencionado?</label>
+        <textarea name="local_programs" rows="3" @keyup="isValid($event)" v-model.trim="item.local_programs"></textarea>
+      </div>
+
+      <div class="row">
+        <label for="representant_popular">* ¿Cuál es la razón por la que desea ser representante popular?</label>
+        <input type="text" @keyup="isValid($event)" v-model.trim="item.representant_popular" placeholder="">
+      </div>
+
+      <div class="row">
+        <label for="representant_strengths">* Indique cuales son sus tres principales fortalezas para ser representante.</label>
+        <textarea name="representant_strengths" rows="3" @keyup="isValid($event)" v-model.trim="item.representant_strengths"></textarea>
+      </div> 
     
     <br>
     <br>
     <br>
-    <button @click="saveItem" class="botonsin">Finalizar registro</button>
+    <button @click="ok" class="botonsin">Finalizar registro</button>
   </div>
 </template>
 
@@ -414,12 +414,45 @@
   export default {
     data() {
       return {
+        formValid: false,
         hide: true,
         item: {
-          temporal: "2018-12-01",
+          
+          name: '',
+          lastname: '',
+          email: '',    
           gender: 'Prefiero no decirlo',
+          age: 18,
+          website: 'Opcional',
+          phone: '',
+          photo: '',
+          public_email: '',
+          twitter: 'Opcional',
+          facebook: 'Opcional',
+          instagram: 'Opcional',
+
+          party: '',
+          politic_state: '',
+          politic_charge: '',
+          section_federal: '',
+          section_local: '',
+          locality: '',
+          last_degree: '',
+          school: '',
+          school_degree: '',
+          on_charge: false,
+          on_charge_experience: '',
+          job_last_experience: '',
+          job_last_last_experience: 'Opcional',
           language_indi: 0,
+          language_indi_ones: '',
           languates_general: 0,
+          languates_general_ones: '',
+          proposal_principal: '',
+          proposal_second: '',
+          proposal_third: '',
+          proposal_specter: '',
+
           state_health_security: 'Me da igual',
           state_responsible: 'Me da igual',
           state_taxes: 'Me da igual',
@@ -427,29 +460,64 @@
           state_legalization_weed: 'Me da igual',
           state_legalization_bi: 'Me da igual',
           state_legalization_abort: 'Me da igual',
+          mexico_problem: '',
+          mexico_programs: '',
+          local_problem: '',
+          local_programs: '',
+          representant_popular: '',
+          representant_strengths: '',
         },
       };
     },
     methods: {
+      ok() {
+
+        for (const key in this.item) {
+          this.valid(this.item[key])
+          if(!this.formValid)
+            break;
+          else
+            console.log(key + ': ' + this.item[key]);
+
+        }
+
+        /*
+        this.valid(this.item.name);
+        this.valid(this.item.lastname);
+        */
+      },
+      valid(property){
+        if(property.length < 3) {
+          alert("Revise los campos obligatorios (*) para poder continuar.")
+          return this.formValid = false;
+        }
+        else{
+          return this.formValid = true;
+        }
+
+      },
       async saveItem() {
+
+        /*
         await this.$store.dispatch('saveItem', this.item);
         return this.$router.push('/representantes');
+        */
       },
       isValid(e){
         let input = e.target
-        if (input.value.trim() != "" && input.value.trim() != 0) {
+        if (input.value.trim() != "" && input.value.trim() != 0 && input.value.length > 2) {
           input.classList.remove("wrong");
         } else {
           input.classList.add("wrong") ;
         }
       },
-      languageIndi(e){
+      showLanguageIndi(e){
         let input = e.target
         if (input.value == '0') {
           this.item.language_indi_ones = '';
         }
       },
-      languageGeneral(e){
+      showLanguageGeneral(e){
         let input = e.target
         if (input.value == '0') {
           this.item.language_general_ones = '';
@@ -520,6 +588,7 @@
     border-color: #f72a2a;
   }
   input,
+  textarea,
   select {
     width: 100%;
     padding: .5rem;
@@ -527,14 +596,15 @@
     border: 3px solid #e3dfd7;
     border-radius: 8px;
   }
-  input:focus {
+  input:focus,
+  textarea:focus {
     outline: none;
   }
   .home {
     background-color: #3b9bb3;
-    padding: 10px 20px 40px;
+    padding: 10px 10px 40px;
     border-radius: 15px;
-    margin: 5px 10px 20px;
+    margin: 5px 8px 20px;
     box-shadow: 5px 5px 6px 0 rgb(0 0 0 / 21%), 1px 4px 4px -1px rgb(0 0 0 / 14%), 0px 0px 5px 0px rgb(0 0 0 / 21%);
   }
   label {
