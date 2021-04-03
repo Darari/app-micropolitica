@@ -2,6 +2,12 @@
   <div class="items">
     <h2 style="font-size: 25px; text-align:center; letter-spacing: 4px; padding: 2px 0 15px 10px; margin-bottom: 10px;">Representantes </h2>
 
+    <div class="row">
+      <input type="text" @keyup="isValid($event)" v-model.trim="query" placeholder="Buscar">
+      <br>
+      <br>
+    </div>
+
     <div v-for="item in items" :key="item.id">
       <router-link :to="goToItem(item.id)">
         <p>
@@ -27,7 +33,18 @@
   a {
     text-decoration: none;
   }
+  
+  input {
+    padding: .5rem;
+    font-size: 1.2rem;
+    border: 3px solid #e3dfd7;
+    border-radius: 8px;
+  }
+  input:focus {
+    outline: none;
+  }
 </style>
+
 
 <script>
 
