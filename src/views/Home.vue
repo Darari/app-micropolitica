@@ -405,7 +405,6 @@
     
     <br>
     <br>
-    <br>
     <button @click="ok" class="botonsin">Finalizar registro</button>
   </div>
 </template>
@@ -628,8 +627,6 @@
         */
 </script>
 
-
-
 <style scoped>
   h3 {
     font-size: 30px;
@@ -677,7 +674,7 @@
     border-radius: .25rem;
     padding: 13px 16px;
     line-height: 1.5;
-    font-size: 1rem;
+    font-size: 1.2rem;
     
     display: inline-block;
     text-align: center;

@@ -1,11 +1,15 @@
 <template>
   <div>
-    <img src="https://micropolitica.com.mx/assets/1.png" style="width:180px; text-align: center; padding: 20px 10px 0;" alt="logo img">
+    <a href="/representantes">
+      <img src="https://micropolitica.com.mx/assets/1.png" style="width:180px; text-align: center; padding:12px 0 9px" alt="logo img">
+    </a>
   </div>
+  <!--
   <div id="nav">
     <router-link to="/">Registrar</router-link> |
-    <router-link to="/representantes">Representantes</router-link>
+    <router-link to="/representantes">Candidatos</router-link>
   </div>
+  -->
   <router-view/>
 </template>
 
