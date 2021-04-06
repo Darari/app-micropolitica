@@ -86,7 +86,7 @@
           <option value="Movimiento Ciudadano">Movimiento Ciudadano</option>
           <option value="Movimiento Regeneración Nacional">Movimiento Regeneración Nacional</option>
           <option value="Independiente">Independiente</option>
-          <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
+          <option value="Otro">Otro</option>
         </select>
       </div>
 
@@ -137,7 +137,7 @@
           <option value="Regiduría">Regiduría</option>
           <option value="Sindicatura">Sindicatura</option>
           <option value="Gubernatura">Gubernatura</option>
-          <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
+          <option value="Otro">Otro</option>
         </select>
       </div>
 
@@ -173,7 +173,7 @@
           <option value="Doctorado">Doctorado</option>
           <option value="Técnico Superior">Técnico Superior</option>
           <option value="Carrera Técnica">Carrera Técnica</option>
-          <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
+          <option value="Otro">Otro</option>
         </select>
       </div>
 
@@ -190,7 +190,7 @@
           <option value="Ciencias de la vida o medicina">Ciencias de la vida o medicina</option>
           <option value="Ciencias naturales">Ciencias naturales</option>
           <option value="Ciencias sociales">Ciencias sociales</option>
-          <option value="Ninguna de las anteriores">Ninguna de las anteriores</option>
+          <option value="Otra">Otra</option>
         </select>
       </div>
 
@@ -262,7 +262,14 @@
         <textarea name="proposal_third" rows="3" @keyup="isValid($event)" v-model.trim="item.proposal_third"></textarea>
       </div>
 
+
+
+      
+
+
+
       <div class="row">
+        <h3>Ideología</h3>
         <label for="proposal_specter">* En el espectro ideológico político. ¿En dónde se considera usted?</label>
         <select v-model="item.proposal_specter">
           <option value="Izquierda">Izquierda</option>
@@ -271,13 +278,7 @@
         </select>
       </div>
 
-
-
-      
-
-
       <div class="row">
-        <h3>Ideología</h3>
         <label for="state_health_security">* ¿El Estado debe asegurar el bienestar de la gente?</label>
         <select v-model="item.state_health_security">
           <option value="A favor">A favor</option>
@@ -360,7 +361,7 @@
           <option value="La pobreza">La pobreza</option>
           <option value="Los feminicidios">Los feminicidios</option>
           <option value="Inmigración">Inmigración</option>
-          <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
+          <option value="Otro">Otro</option>
         </select>
       </div>
 
@@ -384,7 +385,7 @@
           <option value="La pobreza">La pobreza</option>
           <option value="Los feminicidios">Los feminicidios</option>
           <option value="Inmigración">Inmigración</option>
-          <option value="Ninguno de los anteriores">Ninguno de los anteriores</option>
+          <option value="Otro">Otro</option>
         </select>
       </div>
 

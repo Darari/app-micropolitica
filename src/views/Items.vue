@@ -7,7 +7,7 @@
     padding: 2px 0 5px 10px;">Candidatos</h2>
 
 
-    <div class="row" style="display: flex;">
+    <div class="row">
       <input type="text"
             @keyup="searchForName()"
             v-model.trim="searchName"
@@ -132,6 +132,22 @@
   input:focus,
   select:focus {
     outline: none;
+  }
+
+  @media (min-width:721px) {
+    .row {
+      display: flex;
+    }
+  }
+
+  @media (max-width:720px) {
+    input {
+      width: 100%;
+      max-width: 280px;
+    }
+    select {
+      min-width: 200px;
+    }
   }
 </style>
 
